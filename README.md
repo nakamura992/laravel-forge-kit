@@ -14,8 +14,8 @@ ROOT_MYSQL_PASSWORD=
 脳死で順番にコピペ
 ```
 docker-compose up -d --build
-# 成功後appコンテナに入る
 docker-compose exec app bash
+# 成功後appコンテナに入る
 ```
 ## コンテナの中で
 時間がかかるので何も触らない
@@ -54,8 +54,8 @@ php artisan key:generate
 exit
 ```
 ## ホスト側で
+ルートの.envファイルの環境変数をsrcの中の環境変数に追加
 ```
-# ルートの.envファイルの環境変数をsrcの中の環境変数に追加
 cat .env >> src/.env
 ```
 
