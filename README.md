@@ -19,7 +19,7 @@ make app
 mkdir ../temp
 
 # Makefileなど、保持したいファイルを一階層上の一時ディレクトリに移動
-mv * ../temp/ 2>/dev/null  # エラーメッセージを無視
+mv * ../temp/ 2>/dev/null
 mv .* ../temp/ 2>/dev/null
 
 # Laravelをインストール
