@@ -11,13 +11,14 @@ ROOT_MYSQL_PASSWORD=
 ※コマンドはまとめて貼り付けて実行できます。
 ※コメントを含めても大丈夫です。（コードセクションごとに右上のコピーボタンからコピーしてはりつけてね）
 
-脳死で順番にコピペ
+まとめてコピーして貼り付ける
 ```
 docker-compose up -d --build
 docker-compose exec app bash
 # 成功後appコンテナに入る
 ```
 ## コンテナの中で
+まとめてコピーして貼り付ける。
 時間がかかるので何も触らない
 ```
 # 一時ディレクトリを作成
@@ -54,6 +55,7 @@ php artisan key:generate
 exit
 ```
 ## ホスト側で
+同じくまとめてコピーして貼り付ける
 ルートの.envファイルの環境変数をsrcの中の環境変数に追加
 ```
 cat .env > src/.env.tmp
@@ -66,6 +68,7 @@ rm src/.env.tmp
 ```
 docker-compose exec app bash
 ```
+同じくまとめてコピーして貼り付ける
 ```
 #マイグレーションを実行
 php artisan migrate
