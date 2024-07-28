@@ -13,9 +13,9 @@ ROOT_MYSQL_PASSWORD=
 
 脳死で順番にコピペ
 ```
-make build-up
+docker-compose up -d --build
 # 成功後appコンテナに入る
-make app
+docker-compose exec app bash
 ```
 ## コンテナの中で
 時間がかかるので何も触らない
@@ -47,9 +47,6 @@ cd html
 composer install
 npm install
 
-# migrateする
-php artisan migrate
-
 # keyを生成する
 php artisan key:generate
 
@@ -61,6 +58,11 @@ exit
 # ルートの.envファイルの環境変数をsrcの中の環境変数に追加
 
 cat .env >> src/.env
+```
+
+## 再度コンテナに入る
+```
+php artisan migrate
 ```
 
 ## Dockerfileの変更
