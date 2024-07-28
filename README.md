@@ -6,11 +6,10 @@ MYSQL_PASSWORD=
 環境変数を設定する。
 ## dockerを立ち上げ
 ルートディレクトリで下記を実行
+※コマンドはまとめて貼り付けて実行できます。
 ```
 make build-up
-```
-成功後appコンテナに入る
-```
+# 成功後appコンテナに入る
 rm ./src/vendor
 rm ./src/node_modules
 make app
