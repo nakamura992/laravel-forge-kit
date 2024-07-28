@@ -8,9 +8,8 @@ services:
       dockerfile: ./docker/php/Dockerfile
     volumes:
       - ./src/:/var/www/html
-      # Laravelインストール前はコメントアウト
-      # - vendor-volumes:/var/www/html/vendor
-      # - node_modules:/var/www/html/node_modules
+      - vendor-volumes:/var/www/html/vendor
+      - node_modules:/var/www/html/node_modules
 
   nginx:
     image: nginx
