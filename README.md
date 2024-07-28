@@ -1,8 +1,8 @@
 # Laravelのセットアップ
 ## .env.exampleコピーして.envを作成
 ```
-APP_NAME=
-MYSQL_PASSWORD=
+ROOT_APP_NAME=
+ROOT_MYSQL_PASSWORD=
 ```
 環境変数を設定する。
 ## dockerを立ち上げ
@@ -49,9 +49,19 @@ npm install
 # migrateする
 php artisan migrate
 
+# keyを生成する
+php artisan key:generate
+
 # 抜ける
 exit
 ```
+## ホスト側で
+```
+# ルートの.envファイルの環境変数をsrcの中の環境変数に追加
+
+cat .env >> src/.env
+```
+
 ## Dockerfileの変更
 `docker/php/Dockerfile`を開く
 ```
