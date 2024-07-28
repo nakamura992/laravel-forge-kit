@@ -2,18 +2,19 @@ version: "3.8"
 
 services:
   app:
-    container_name: ${APP_NAME}-app
+    container_name: ${ROOT_APP_NAME}-app
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
     volumes:
       - ./src/:/var/www/html
-      - vendor-volumes:/var/www/html/vendor
-      - node_modules:/var/www/html/node_modules
+      # Laravelインストール後コメントアウトを解除
+      # - vendor-volumes:/var/www/html/vendor
+      # - node_modules:/var/www/html/node_modules
 
   nginx:
     image: nginx
-    container_name: ${APP_NAME}-nginx
+    container_name: ${ROOT_APP_NAME}-nginx
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
@@ -27,13 +28,13 @@ services:
 
   db:
     image: mysql:8.4
-    container_name: ${APP_NAME}-db
+    container_name: ${ROOT_APP_NAME}-db
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${ROOT_MYSQL_PASSWORD}
       TZ: 'Asia/Tokyo'
-      MYSQL_DATABASE: ${APP_NAME}
-      MYSQL_USER: ${APP_NAME}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${ROOT_APP_NAME}
+      MYSQL_USER: ${ROOT_APP_NAME}
+      MYSQL_PASSWORD: ${ROOT_MYSQL_PASSWORD}
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
       - mysql-volume:/var/lib/mysql
@@ -42,7 +43,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: ${APP_NAME}-pma
+    container_name: ${ROOT_APP_NAME}-pma
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
