@@ -14,9 +14,20 @@ make build-up
 make app
 ```
 Laravelをインストール
+srcの中をいったん退避
+```
+mv * ../ 2>/dev/null
+mv .[!.]* ../ 2>/dev/null
+```
 ```
 composer create-project laravel/laravel .
+cd ../
 ```
+```
+mv src/* . 2>/dev/null
+mv src/.* . 2>/dev/null
+```
+Laravel
 `docker/php/Dockerfile`を開く
 ```
 # laravelインストール前にコメントアウト
