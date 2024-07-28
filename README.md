@@ -18,6 +18,7 @@ make build-up
 make app
 ```
 ## コンテナの中で
+時間がかかるので何も触らない
 ```
 # 一時ディレクトリを作成
 mkdir ../temp
