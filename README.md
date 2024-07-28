@@ -17,3 +17,10 @@ Laravelをインストール
 ```
 composer create-project laravel/laravel .
 ```
+`docker/php/Dockerfile`を開く
+```
+# laravelインストール前にコメントアウト
+# インストール後にコメントアウト解除
+# RUN npm install
+```
+最後の `# RUN npm install`のコメントアウトを解除する。
