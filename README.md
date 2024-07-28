@@ -11,7 +11,8 @@ make build-up
 ```
 成功後appコンテナに入る
 ```
-rm ./src/vendor ./src/node_modules
+rm ./src/vendor
+rm ./src/node_modules
 make app
 ```
 ## コンテナの中で
