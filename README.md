@@ -68,13 +68,6 @@ docker-compose exec app bash
 php artisan migrate
 ```
 
-## Dockerfileの変更
-`docker/php/Dockerfile`を開く
-```
-# laravelインストール前にコメントアウト
-# インストール後にコメントアウト解除
-# RUN npm install
-```
 最後の `# RUN npm install`のコメントアウトを解除する。
 ## docker-compose.ymlの変更
 ```
