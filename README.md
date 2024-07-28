@@ -56,8 +56,8 @@ exit
 ## ホスト側で
 ルートの.envファイルの環境変数をsrcの中の環境変数に追加
 ```
-cat ./src/.env > src/.env.tmp
-cat .env >> src/.env.tmp
+cat .env > src/.env.tmp
+cat ./src/.env >> src/.env.tmp
 copy src/.env.tmp src/.env
 rm -rf src/.env.tmp
 ```
