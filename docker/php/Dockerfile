@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     make \
     nano \
     vim \
+    sudo \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd mysqli
 
 #Composer インストール
