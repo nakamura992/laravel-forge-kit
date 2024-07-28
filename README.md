@@ -38,6 +38,10 @@ rmdir temp
 
 # プロジェクトディレクトリに戻る
 cd html
+
+# パッケージなどをインストール
+composer i
+npm i
 ```
 ## Dockerfileの変更
 `docker/php/Dockerfile`を開く
