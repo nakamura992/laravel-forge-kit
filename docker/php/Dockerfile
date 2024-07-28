@@ -46,3 +46,6 @@ RUN composer global require "laravel/installer"
 
 # 作業ディレクトリを設定
 WORKDIR /var/www/html/
+
+# laravelインストール後にコメントアウト
+# RUN npm install
