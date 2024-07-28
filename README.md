@@ -64,7 +64,6 @@ docker-compose cp app:/var/www/html/node_modules ./src/
 # RUN npm install
 ```
 最後の `# RUN npm install`のコメントアウトを解除する。
-```
 ## docker-compose.ymlの変更
 ```
 # Laravelインストール後コメントアウトを解除
