@@ -44,8 +44,10 @@ cd html
 
 # パッケージなどをインストール
 composer install
-npm
 npm install
+
+# migrateする
+php artisan migrate
 
 # 抜ける
 exit
