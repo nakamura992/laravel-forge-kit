@@ -92,7 +92,6 @@ chmod -R 775 ./bootstrap/cache
 chmod 755 artisan
 ```
 
-最後の `# RUN npm install`のコメントアウトを解除する。
 ## docker-compose.ymlの変更
 ```
 # Laravelインストール後コメントアウトを解除
