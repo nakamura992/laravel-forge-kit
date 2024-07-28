@@ -11,6 +11,7 @@ make build-up
 ```
 成功後appコンテナに入る
 ```
+rm vendor node_modules
 make app
 ```
 ## コンテナの中で
@@ -38,7 +39,7 @@ rmdir temp
 # プロジェクトディレクトリに戻る
 cd html
 ```
-## docker-compose.ymlとDockerfileの変更
+## Dockerfileの変更
 `docker/php/Dockerfile`を開く
 ```
 # laravelインストール前にコメントアウト
@@ -48,8 +49,3 @@ cd html
 最後の `# RUN npm install`のコメントアウトを解除する。
 `docker-compose.ymlを開く`
 ```
-# Laravelインストール前はコメントアウト
-# - vendor-volumes:/var/www/html/vendor
-# - node_modules:/var/www/html/node_modules
-```
-同じくコメントアウトを解除
