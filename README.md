@@ -43,6 +43,17 @@ cd html
 # パッケージなどをインストール
 composer i
 npm i
+
+# 抜ける
+exit
+```
+ホスト側で
+```
+# vendorディレクトリをコピー
+docker-compose cp app:/var/www/html/vendor ./src/
+
+# node_modulesディレクトリをコピー
+docker-compose cp app:/var/www/html/node_modules ./src/
 ```
 ## Dockerfileの変更
 `docker/php/Dockerfile`を開く
