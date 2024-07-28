@@ -59,7 +59,7 @@ exit
 cat .env > src/.env.tmp
 cat ./src/.env >> src/.env.tmp
 copy src/.env.tmp src/.env
-rm -rf src/.env.tmp
+rm src/.env.tmp
 ```
 
 ## 再度コンテナに入る
