@@ -14,8 +14,6 @@ MYSQL_PASSWORD=
 ```
 make build-up
 # 成功後appコンテナに入る
-rm ./src/vendor
-rm ./src/node_modules
 make app
 ```
 ## コンテナの中で
