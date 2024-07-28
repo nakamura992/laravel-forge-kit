@@ -47,7 +47,7 @@ npm i
 # 抜ける
 exit
 ```
-ホスト側で
+## ホスト側で
 ```
 # vendorディレクトリをコピー
 docker-compose cp app:/var/www/html/vendor ./src/
