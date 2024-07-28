@@ -41,8 +41,9 @@ rmdir temp
 cd html
 
 # パッケージなどをインストール
-composer i
-npm i
+composer install
+npm
+npm install
 
 # 抜ける
 exit
