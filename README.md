@@ -65,7 +65,26 @@ rm src/.env.tmp
 ## 再度コンテナに入る
 ```
 docker-compose exec app bash
+```
+```
+#マイグレーションを実行
 php artisan migrate
+
+#以下権限設定
+#ubuntu debianOSの場合
+chown -R www-data:www-data /var/www/html
+# ディレクトリを755に設定
+find . -type d -exec chmod 755 {} \;
+
+# ファイルを644に設定
+find . -type f -exec chmod 644 {} \;
+
+# storage と bootstrap/cache を書き込み可能に設定
+chmod -R 775 ./storage
+chmod -R 775 ./bootstrap/cache
+
+#artisanに実行権限
+chmod 755 artisan
 ```
 
 最後の `# RUN npm install`のコメントアウトを解除する。
