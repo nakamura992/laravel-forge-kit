@@ -8,8 +8,8 @@ services:
       dockerfile: ./docker/php/Dockerfile
     volumes:
       - ./src/:/var/www/html
-      - vendor-volumes:/var/www/html/src/vendor
-      - node_modules:/var/www/html/src/node_modules
+      - vendor-volumes:/var/www/html/vendor
+      - node_modules:/var/www/html/node_modules
 
   nginx:
     image: nginx
