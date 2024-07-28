@@ -62,6 +62,7 @@ cat .env >> src/.env
 
 ## 再度コンテナに入る
 ```
+docker-compose exec app bash
 php artisan migrate
 ```
 
