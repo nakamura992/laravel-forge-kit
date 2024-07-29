@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: コンテナをビルドして起動
-docker-compose -f docker-compose.yml -f docker-compose.init.yml up -d --build
+docker-compose -f docker-compose.init.yml up -d --build
 
 :: コンテナ内での作業
 echo exec command: mkdir ../temp
