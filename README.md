@@ -4,8 +4,9 @@
 //　現在のディレクトリのクローンする
 git clone https://github.com/nakamura992/laravel-forge-kit.git .
 
-git clone https://github.com/nakamura992/laravel-forge-kit.git app
 // appフォルダ（名前は任意）を作りそこにクローン
+git clone https://github.com/nakamura992/laravel-forge-kit.git app
+
 ```
 ## .envファイルの以下の設定
 ```
