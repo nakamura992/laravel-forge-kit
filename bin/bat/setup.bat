@@ -27,7 +27,6 @@ echo exec command: npm install
 docker-compose exec -T app bash -c "npm install"
 
 :: .env.exampleから.envを複製
-echo exec command: copy src/.env.example src/.env
 copy src/.env.example src/.env
 
 :: ルートディレクトリの.envを一時ファイルにコピー

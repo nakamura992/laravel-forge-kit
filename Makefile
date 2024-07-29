@@ -30,3 +30,30 @@ app:
 
 app-www-data:
 	docker-compose exec --user=www-data app bash
+
+
+# Laravel setup for Mac/Linux
+setup_for_mac:
+	@read -p "Are you sure you want to continue? (yes/no) " choice; \
+	if [ "$$choice" = "yes" ]; then \
+		sh bin/sh/setup.sh; \
+	else \
+		echo "Setup cancelled."; \
+	fi
+
+# Laravel setup for Windows
+setup_for_windows:
+	@powershell -Command " \
+		$$choice = Read-Host 'Are you sure you want to continue? (yes/no)'; \
+		if ($$choice -eq 'yes') { \
+			& '.\bin\bat\setup.bat'; \
+		} else { \
+			Write-Host 'Setup cancelled.' \
+		}"
+
+# override.yml
+ovr-init:
+	docker-compose -f docker-compose.yml -f docker-compose.init.yml up -d --build
+	docker-compose -f docker-compose.yml -f docker-compose.init.yml run --rm app sh -c "composer install && npm install"
+	docker-compose -f docker-compose.yml -f docker-compose.init.yml down
+	docker-compose up -d
