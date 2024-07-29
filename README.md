@@ -22,6 +22,8 @@ ROOT_MYSQL_PASSWORD=
 
 まとめてコピーして貼り付ける
 ```
+//始める前にREADMEファイルを消しておく
+
 docker-compose up -d --build
 docker-compose exec app bash
 # 成功後appコンテナに入る
