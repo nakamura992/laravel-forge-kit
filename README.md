@@ -1,4 +1,8 @@
 # Laravelのセットアップ
+## フォルダをつくりクローンする
+```
+git clone 
+```
 ## .env.exampleコピーして.envを作成
 ```
 ROOT_APP_NAME=
