@@ -1,9 +1,9 @@
 # Laravelのセットアップ
 ## フォルダをつくりクローンする
 ```
-git clone 
+git clone https://github.com/nakamura992/laravel-forge-kit.git .
 ```
-## .env.exampleコピーして.envを作成
+## .envファイルの以下の設定
 ```
 ROOT_APP_NAME=
 ROOT_MYSQL_PASSWORD=
