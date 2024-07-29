@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   app:
     container_name: ${ROOT_APP_NAME}-app
@@ -8,9 +6,8 @@ services:
       dockerfile: ./docker/php/Dockerfile
     volumes:
       - ./src/:/var/www/html
-      # Laravelインストール後コメントアウトを解除
-      # - vendor-volumes:/var/www/html/vendor
-      # - node_modules:/var/www/html/node_modules
+      - vendor-volumes:/var/www/html/vendor
+      - node_modules:/var/www/html/node_modules
 
   nginx:
     image: nginx

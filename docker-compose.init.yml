@@ -1,0 +1,10 @@
+services:
+  app:
+    volumes:
+      - ./src/:/var/www/html
+    command: >
+      sh -c "
+        if [ -f composer.json ]; then composer install; fi &&
+        if [ -f package.json ]; then npm install; fi &&
+        php-fpm
+      "
