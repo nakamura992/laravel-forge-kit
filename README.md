@@ -1,6 +1,7 @@
 # Laravelのセットアップ
 ## フォルダをつくりクローンする
 ```
+# app_nameはなんでもいい
 mkdir app_name
 cd app_name
 git clone https://github.com/nakamura992/laravel-forge-kit.git .
