@@ -1,13 +1,11 @@
 # Laravelのセットアップ
-## フォルダをつくりクローンする
+## クローンする
 ```
-# app_nameはなんでもいい
-mkdir app_name
-cd app_name
+//　現在のディレクトリのクローンする
 git clone https://github.com/nakamura992/laravel-forge-kit.git .
 
-#もしくは
-git clone https://github.com/nakamura992/laravel-forge-kit.git app_name
+git clone https://github.com/nakamura992/laravel-forge-kit.git app
+// appフォルダ（名前は任意）を作りそこにクローン
 ```
 ## .envファイルの以下の設定
 ```
