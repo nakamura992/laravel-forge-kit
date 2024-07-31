@@ -43,28 +43,40 @@ del src\.env.tmp
 
 :: 再度コンテナ内での作業
 
+REM アプリケーションキーを生成
 echo exec command: php artisan key:generate
 docker-compose exec -T app bash -c "php artisan key:generate"
 
+REM データベースマイグレーションを実行
 echo exec command: php artisan migrate
 docker-compose exec -T app bash -c "php artisan migrate"
 
+REM アプリケーションディレクトリの所有者をwww-dataに変更
 echo exec command: chown -R www-data:www-data /var/www/html
 docker-compose exec -T app bash -c "chown -R www-data:www-data /var/www/html"
 
+REM すべてのディレクトリの権限を755に設定
 echo exec command: find . -type d -exec chmod 755 {} \;
 docker-compose exec -T app bash -c "find . -type d -exec chmod 755 {} \;"
 
+REM すべてのファイルの権限を644に設定
 echo exec command: find . -type f -exec chmod 644 {} \;
 docker-compose exec -T app bash -c "find . -type f -exec chmod 644 {} \;"
 
+REM storageディレクトリの権限を775に設定（書き込み権限を付与）
 echo exec command: chmod -R 775 ./storage
 docker-compose exec -T app bash -c "chmod -R 775 ./storage"
 
+REM bootstrap/cacheディレクトリの権限を775に設定（書き込み権限を付与）
 echo exec command: chmod -R 775 ./bootstrap/cache
 docker-compose exec -T app bash -c "chmod -R 775 ./bootstrap/cache"
 
+REM artisanファイルの実行権限を設定
 echo exec command: chmod 755 artisan
 docker-compose exec -T app bash -c "chmod 755 artisan"
+
+REM publicディレクトリにstorageのシンボリックリンクを作成
+echo exec command: php artisan storage:link
+docker-compose exec -T app bash -c "php artisan storage:link"
 
 echo Setup completed.
