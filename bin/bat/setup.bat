@@ -79,4 +79,28 @@ REM publicディレクトリにstorageのシンボリックリンクを作成
 echo exec command: php artisan storage:link
 docker-compose exec -T app bash -c "php artisan storage:link"
 
+REM コンテナを削除
+echo exec command: docker-compose down
+docker-compose down
+
+REM コンテナを通常通りのymlでビルド
+echo exec command: docker-compose up -d --build
+docker-compose up -d --build
+
+REM ホストのvendorディレクトリをコンテナのappにコピー
+echo exec command: docker-compose cp .\src\vendor app:/var/www/html
+docker-compose cp .\src\vendor app:/var/www/html
+
+REM ホストのnode_modulesディレクトリをコンテナのappにコピー
+echo exec command: docker-compose cp .\src\node_modules app:/var/www/html
+docker-compose cp .\src\node_modules app:/var/www/html
+
+REM ホストのstorageディレクトリをコンテナのappにコピー
+echo exec command: docker-compose cp .\src\storage app:/var/www/html
+docker-compose cp .\src\storage app:/var/www/html
+
+REM コピー後にユーザー権限をwww-dataに変更
+echo exec command: chown -R www-data:www-data /var/www/html
+docker-compose exec -T app bash -c "chown -R www-data:www-data /var/www/html"
+
 echo Setup completed.
