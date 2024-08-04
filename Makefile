@@ -52,8 +52,7 @@ include .env
 export
 check_env_vars:
 	@if [ -z "$(ROOT_APP_NAME)" ] || [ -z "$(ROOT_MYSQL_PASSWORD)" ]; then \
-		echo "ROOT_APP_NAME または ROOT_MYSQL_PASSWORD が設定されていません。"; \
-		echo ".env ファイルを確認してください。"; \
+		echo ".env is not set."; \
 		exit 1; \
 	fi
 
