@@ -47,10 +47,9 @@ app-www-data:
 vdown:
 	docker-compose down -v
 
+# 環境変数のチェック
 include .env
 export
-
-# 環境変数のチェック
 check_env_vars:
 	@if [ -z "$(ROOT_APP_NAME)" ] || [ -z "$(ROOT_MYSQL_PASSWORD)" ]; then \
 		echo "ROOT_APP_NAME または ROOT_MYSQL_PASSWORD が設定されていません。"; \
