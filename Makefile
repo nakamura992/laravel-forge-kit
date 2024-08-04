@@ -47,8 +47,19 @@ app-www-data:
 vdown:
 	docker-compose down -v
 
+include .env
+export
+
+# 環境変数のチェック
+check_env_vars:
+	@if [ -z "$(ROOT_APP_NAME)" ] || [ -z "$(ROOT_MYSQL_PASSWORD)" ]; then \
+		echo "ROOT_APP_NAME または ROOT_MYSQL_PASSWORD が設定されていません。"; \
+		echo ".env ファイルを確認してください。"; \
+		exit 1; \
+	fi
+
 # Laravel setup for Mac/Linux
-setup_for_mac:
+setup_for_mac: check_env_vars
 	@read -p "Are you sure you want to continue? (yes/no) " choice; \
 	if [ "$$choice" = "yes" ]; then \
 		sh bin/sh/setup.sh; \
@@ -57,7 +68,7 @@ setup_for_mac:
 	fi
 
 # Laravel setup for Windows
-setup_for_windows:
+setup_for_windows: check_env_vars
 	@powershell -Command " \
 		$$choice = Read-Host 'Are you sure you want to continue? (yes/no)'; \
 		if ($$choice -eq 'yes') { \
