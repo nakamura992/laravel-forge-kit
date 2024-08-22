@@ -45,8 +45,9 @@ RUN composer global require "laravel/installer"
 # # Npmの依存関係をインストール
 # RUN cd /var/www/html/src && if [ -f /var/www/html/src/package.json ]; then npm install; else echo "npm install skip"; fi
 
+# install xdebug
+RUN pecl install xdebug && \
+    docker-php-ext-enable xdebug
+
 # 作業ディレクトリを設定
 WORKDIR /var/www/html/
-
-# laravelインストール後にコメントアウト
-# RUN npm install
