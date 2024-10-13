@@ -8,7 +8,6 @@ services:
       - ./src/:/var/www/html
       - vendor-volumes:/var/www/html/vendor
       - node_modules:/var/www/html/node_modules
-      - storage-volume:/var/www/html/storage
 
   nginx:
     image: nginx
@@ -56,4 +55,3 @@ volumes:
   mysql-volume:
   vendor-volumes:
   node_modules:
-  storage-volume:
