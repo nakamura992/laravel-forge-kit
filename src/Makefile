@@ -90,7 +90,7 @@ m-rule:
 
 # コントローラを作成
 m-ctrl:
-	@read -p "コントローラ名を入力してください: " name; \
+	@read -p "コントローラ名を入力してください(例: User): " name; \
 	php artisan make:controller $${name}Controller
 
 # ミドルウェアを作成
@@ -120,5 +120,5 @@ m-mail:
 	php artisan make:mail $$name
 
 m-ctrl-api:
-	@read -p "コントローラ名を入力してください(例: UserController): " name; \
+	@read -p "コントローラ名を入力してください(例: User): " name; \
 	php artisan make:controller Api/$${name}Controller --api
